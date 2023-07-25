@@ -1,10 +1,8 @@
 def pascal_triangle(n):
-    triangle = []
-
     if n <= 0:
-        return triangle
+        return []
 
-    triangle.append([1])  # the first row
+    triangle = [[1]]  # the first row
 
     for row in range(1, n):
         current_row = [1]  # the first element of each row is 1
