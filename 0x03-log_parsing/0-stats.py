@@ -4,9 +4,9 @@
 import sys
 
 
-def print_n(t_file_size, status):
+def print(total_size, cache):
     """Prints total file size and cache list"""
-    print("File size: {:d}".format(t_file_size))
+    print("File size: {:d}".format(total_size))
     for key, value in sorted(cache.items()):
         if value != 0:
             print("{}: {}".format(key, value))
@@ -20,7 +20,7 @@ counter = 0
 
 try:
     for line in sys.stdin:
-        line_list = line.split(" ")
+        line_list = line.split()
 
         if len(line_list) > 2:
             code = line_list[-2]
@@ -33,8 +33,8 @@ try:
             counter += 1
 
         if counter == 10:
-            counter = 0
             print('File size: {}'.format(total_size))
+            counter = 0
 
 except Exception as err:
     pass
