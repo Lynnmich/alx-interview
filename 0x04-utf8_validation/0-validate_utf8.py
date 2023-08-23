@@ -3,7 +3,7 @@
 represents a valid UTF-8 encoding"""
 
 
-def validUTTF8(data):
+def validUTF8(data):
     remaining_bytes = 0
     """iterate thro' each integer in the list"""
     for byte in data:
