@@ -13,7 +13,7 @@ def validUTTF8(data):
             for bit in binary_represantation:
                 if bit == '0':
                     break
-                remaining_bytes +=1
+                remaining_bytes += 1
                 if remaining_bytes == 0:
                     continue
                 """characters can have 1 to 4 bytes"""
@@ -21,7 +21,8 @@ def validUTTF8(data):
                     return False
         else:
             """check if current byte starts with '10'"""
-            if not(binary_representation[0] == '1' and binary_representation[1] == '0'):
+            if not(binary_representation[0] == '1'
+                   and binary_representation[1] == '0'):
                 return False
-            remaining_bytes -=1
+            remaining_bytes -= 1
     return remaining_bytes == 0
