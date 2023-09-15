@@ -10,14 +10,6 @@ total_size = 0
 counter = 0
 
 
-def print_n(total_size):
-    """Prints the statistics"""
-    print("file size: {}".format(total_size))
-    for key, value in sorted(cache.items()):
-        if value != 0:
-            print("{}: {}".format(key, value))
-
-
 try:
     for line in sys.stdin:
         rline = line.split(" ")
@@ -33,5 +25,9 @@ try:
             print_n(total_size)
 except Exception as ex:
     pass
+
 finally:
-    print_n(total_size)
+    print('File size: {}'.format(total_size))
+    for key, value in sorted(cache.items()):
+        if value != 0:
+            print('{}: {}'.format(key, value))
