@@ -15,9 +15,9 @@ try:
         rline = line.split(" ")
         if len(rline) > 4:
             code = rline[-2]
+            filesize = int(rline[-1])
             if code in cache.keys():
                 cache[code] += 1
-            filesize = int(rline[-1])
             total_size += filesize
             counter += 1
 
