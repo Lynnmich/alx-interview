@@ -20,9 +20,14 @@ try:
             filesize = int(rline[-1])
             total_size += filesize
             counter += 1
+
         if counter == 10:
             counter = 0
-            print_n(total_size)
+            print('File size: {}'.format(total_size))
+            for key, value in sorted(cache.items()):
+                if value != 0:
+                    print('{}: {}'.format(key, value))
+
 except Exception as ex:
     pass
 
